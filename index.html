@@ -55,6 +55,26 @@
       color: #666;
       font-size: 0.9rem;
     }
+
+    .button-link {
+      display: inline-block;
+      background-color: #004d7a;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .button-link:hover {
+      background-color: #006ca8;
+    }
+
+    .center {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
   </style>
 </head>
 <body>
@@ -108,10 +128,26 @@
         en viviendas de mayor tamaño, y se observan algunos grupos que podrían corresponder a zonas premium o viviendas de lujo.
       </p>
     </section>
+
+    <section>
+      <h2>Repositorio y código fuente</h2>
+      <p>
+        El código utilizado para este análisis está disponible públicamente en GitHub, donde se incluye el notebook de Python
+        con los pasos del preprocesamiento, la aplicación de los algoritmos y la generación de las gráficas.
+      </p>
+
+      <div class="center">
+        <a href="https://github.com/joselnn/pec2_visualizacion_ouc/blob/main/convex_hull.ipynb"
+           target="_blank"
+           class="button-link">
+          📓 Ver Notebook en GitHub
+        </a>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <p>© 2025 — Análisis de Clustering en Barcelona | Autor: [joselnn]</p>
+    <p>© 2025 — Análisis de Clustering en Barcelona | Autor: [José Luis Núñez Nadales]</p>
   </footer>
 </body>
 </html>
