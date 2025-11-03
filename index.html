@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Análisis de Clustering — Alquileres en Barcelona</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #004d7a;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 1.5rem auto;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    h2 {
+      color: #004d7a;
+      margin-top: 2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Comparativa de Métodos de Clustering: DBSCAN vs K-Means</h1>
+    <p>Análisis de precios de alquiler en Barcelona según superficie y precio</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Descripción del análisis</h2>
+      <p>
+        Este estudio utiliza un conjunto de datos sobre los precios de alquiler en Barcelona (<em>Barcelona Rent Prices</em>),
+        con el objetivo de identificar patrones en la relación entre el precio mensual (€) y los metros cuadrados de las viviendas.
+        Para ello se aplicaron dos métodos de <strong>clustering no supervisado</strong>: <em>DBSCAN</em> y <em>K-Means</em>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Métodos</h2>
+      <h3>DBSCAN (Density-Based Spatial Clustering of Applications with Noise)</h3>
+      <p>
+        DBSCAN agrupa puntos en función de la densidad local. Es capaz de detectar grupos de forma arbitraria
+        y de identificar <strong>anomalías</strong> o puntos atípicos (ruido) que no pertenecen a ningún cluster.
+        No requiere especificar el número de grupos a priori, pero depende de dos parámetros clave: 
+        <code>eps</code> (radio de vecindad) y <code>min_samples</code> (mínimo de puntos por grupo).
+      </p>
+
+      <h3>K-Means</h3>
+      <p>
+        K-Means busca dividir los datos en <em>k</em> grupos que minimicen la distancia entre cada punto y el centroide de su cluster.
+        Es un método rápido y eficaz, aunque asume que los clusters tienen forma esférica y requiere conocer el número de grupos de antemano.
+      </p>
+    </section>
+
+    <section>
+      <h2>Resultados</h2>
+      <img src="barcelona_rent_prices.svg" alt="Comparación entre DBSCAN y K-Means">
+
+      <p>
+        En el gráfico se observa la clasificación de las viviendas según su <strong>precio</strong> y su <strong>superficie</strong>.
+        El método <em>DBSCAN</em> (izquierda) logra identificar un conjunto de <strong>anomalías</strong> (en naranja),
+        correspondientes a viviendas con precios o tamaños inusuales, y dos grupos principales de comportamiento estándar.
+      </p>
+      <p>
+        Por otro lado, <em>K-Means</em> (derecha) segmenta los datos en cuatro grupos, separando mejor las viviendas de alto precio
+        y gran tamaño, pero sin distinguir las anomalías con tanta claridad.
+      </p>
+      <p>
+        En conjunto, ambos métodos revelan una relación no lineal entre superficie y precio: los incrementos de precio son más pronunciados
+        en viviendas de mayor tamaño, y se observan algunos grupos que podrían corresponder a zonas premium o viviendas de lujo.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 — Análisis de Clustering en Barcelona | Autor: [joselnn]</p>
+  </footer>
+</body>
+</html>
